@@ -1,0 +1,148 @@
+/*Your styles*/
+
+ body {
+    margin: 10px;
+}
+
+
+#content {
+    margin-right:auto;
+    margin-left:auto;
+    vertical-align:middle;
+    width:100%;
+}
+
+p{
+color: white;
+}
+
+
+
+
+#btn_test{
+    width: 100%;
+}
+
+
+#unitSwitch{
+margin-top: 5px;    
+ padding-left: 20px;    
+}
+
+#unitSwitch li{  
+text-align: center;    
+margin: 10px 0px;    
+font-size: 13px;    
+display: inline-block;
+width: 70px ;
+list-style: none;
+background-color: #909090;    
+}
+
+#unitSwitch #pixel{
+background-color: #606060;    
+}
+
+
+form ,form p{
+display: inline-block; 
+margin-left: 10px;
+margin-right: 20px;    
+}
+
+form p{
+width: 80px;    
+font-size: 12px;    
+}
+
+
+input{ 
+color: gray;
+background-color: #555555;   
+border-radius:5px;    
+}
+
+#status p input{
+color:white;    
+}
+
+#addguide{
+width: 50px;
+display: block;    
+}
+
+.guideform{
+background-color: black;    
+} 
+
+
+.topcoat-switch{
+margin-bottom: 10px;    
+}
+
+#RGB input{
+width: 50px;   
+margin-left: 10px;    
+}
+
+
+#R , #G , #B{
+background-color: black;    
+}
+
+h1{
+display: block;
+font-size: 13px;
+color: white;
+margin-top: 10px;    
+}
+
+
+
+#options input{
+margin-left: 0px;    
+width: 50px;    
+}
+
+#options p{
+font-size: 10px;
+line-height: 0px;    
+}
+
+
+#Done{
+width: 100%;  
+margin-top: 25px;    
+}
+
+
+
+/*
+Those classes will be edited at runtime with values specified
+by the settings of the CC application
+*/
+.hostFontColor{}
+.hostFontFamily{}
+.hostFontSize{}
+
+/*font family, color and size*/
+.hostFont{}
+/*background color*/
+.hostBgd{}
+/*lighter background color*/
+.hostBgdLight{}
+/*darker background color*/
+.hostBgdDark{}
+/*background color and font*/
+.hostElt{}
+
+
+.hostButton{
+    border:1px solid;
+    border-radius:2px;
+    height:20px;
+    vertical-align:bottom;
+    font-family:inherit;
+    color:inherit;
+    font-size:inherit;
+}

@@ -1,0 +1,223 @@
+    $radius: 10px;
+
+    body{
+        background: linear-gradient(#0e111a,#222222);
+        height: 900px;
+    }
+
+    #content{
+        display: grid;
+        grid-template-columns: 1fr 150px;
+        grid-template-rows: 60px 60px 1fr 60px 50px;
+        width: 500px;
+        height: auto;
+    }
+
+    header{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        
+        grid-row-start: 1;
+        grid-row-end: auto;
+        
+        padding: 0px 20px;
+    }
+    
+    #unitSwitch{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        
+        grid-row-start: 2;
+        grid-row-end: auto;
+        
+        font-size: 12px; 
+    }
+
+    #options{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        
+        grid-row-start: 3;
+        grid-row-end: 5;
+     
+        border-radius: $radius;
+        border:solid 1px black;
+        background-color: rgba(0,0,0,0.3);
+        margin-left: 15px;
+        
+        h2{
+            color: #1770ff;
+            margin-bottom: 15px;
+            border-bottom: solid 1px #0900ff;
+        }
+        p{
+            margin-top: 15px;
+        }
+    }
+    
+    main{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        
+        grid-row-start: 3;
+        grid-row-end: auto;
+        
+    }
+    
+    aside{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        
+        grid-row-start: 4;
+        grid-row-end: auto;
+        
+        padding: 20px; 
+    }
+
+    #presets{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        
+        grid-row-start: 5;
+        grid-row-end: auto;
+        display: flex;
+        justify-content: space-between;
+        padding:{ top:5px;
+                left:20px;
+                right:40px;
+        }
+        .topcoat-button{
+            height: 25px;
+            display: block;
+        }
+    }
+
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        padding: 0px;
+        li{
+            div{
+                display: block;
+                width: 70px;
+                height: 20px;
+                border-radius: 8px;
+                text-align: center;
+                background: linear-gradient(#050d4b,#2a3967);
+            }
+        } 
+        
+        
+        
+    }
+
+    input[type="radio"]:checked + div{
+            background: linear-gradient(#283071,#4e5e8d);
+    }
+
+    ul li div:hover{
+        cursor: pointer;
+    }
+
+    input[type="number"]{
+        background-color: #1e1e1f;
+        color: #413d3d;
+        border-radius: 5px;
+        border-color: #1b368e;
+    }
+
+    
+
+
+    h1,h2 , p{
+        color: white;
+        margin: {
+            top: 0px;
+            bottom: 5px;
+        }
+    }
+
+    h1{
+        font-size: 30px;
+    }
+        
+    h2{
+        font-size: 20px;
+    }
+
+    p{
+        font-size: 12px;
+    }
+    
+    main{
+        form{
+            padding: 15px 20px;
+        }   
+    }
+    
+    .values{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #RGB{
+        .values{
+            margin-top: 10px;
+            padding-right: 150px;
+        }
+    }
+    
+    #status{
+        border-radius: $radius;
+            
+            label{
+                width: 60px;
+                
+                input[type="number"]{
+                    color: white;
+                }
+            }
+        
+        
+    }
+
+    #compact_mode , #JSON_data{
+        display: none;
+        color: white;
+        font-size: 10px;
+        height: 200px;
+        table{
+            display: block;
+            tr{
+                th,td{
+                    border: solid 1px white;
+                }
+            }
+        }
+    }
+
+    #JSON_data{
+        height: 1500px;
+    }
+    
+        
+    
+    /*
+    Those classes will be edited at runtime with values specified
+    by the settings of the CC application
+    */
+    .hostFontColor{}
+    .hostFontFamily{}
+    .hostFontSize{}
+    
+    /*font family, color and size*/
+    .hostFont{}
+    /*background color*/
+    .hostBgd{}
+    /*lighter background color*/
+    .hostBgdLight{}
+    /*darker background color*/
+    .hostBgdDark{}
+    /*background color and font*/
+    .hostElt{}

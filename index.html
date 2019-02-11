@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+        
+<link rel="stylesheet" href="css/topcoat-desktop-dark.min.css"/>
+
+
+<title>Crop Panel</title>
+
+    <script src="js/libs/CSInterface.js"></script>
+
+    <script src="js/themeManager.js"></script>
+    <script defer src="js/dist.js"></script>
+
+</head>
+
+<body class="hostElt">
+
+    <div id="content">        
+        
+                     
+            <header>
+                <h1>Crop panel</h1>
+                <h2>Unit Type</h2>
+            </header>
+            
+    
+            <form name="unit_type">  
+                <ul id="unitSwitch">
+                    <li><label for="pixel" class="topcoat-radio-button">
+                            <input type="radio" name="unit" value="pixel" id="pixel" checked="checked">
+                            <div class="switch_radio_panel">pixel</div>    
+                        </label></li>
+                        
+                    <li><label for="mm" class="topcoat-radio-button">
+                            <input type="radio" name="unit" value="mm" id="mm">
+                            <div class="switch_radio_panel" >mm</div>    
+                        </label></li>
+                        
+                    <li><label for="cm" class="topcoat-radio-button">
+                            <input type="radio" name="unit" value="cm" id="cm">
+                            <div class="switch_radio_panel">cm</div>    
+                        </label></li>
+                        
+                    <li><label for="inch" class="topcoat-radio-button">
+                            <input type="radio" name="unit" value="inch" id="inch">
+                            <div class="switch_radio_panel">inch</div>
+                        </label></li>
+                        
+                    <li><label for="point" class="topcoat-radio-button">
+                            <input type="radio" name="unit" value="point"  id="point">
+                            <div class="switch_radio_panel">point</div>
+                        </label></li>
+                </ul>
+            </form> 
+            
+            <form name="options" id="options">
+                    <h2>Option</h2>
+                         <p>For All Opened Files</p>
+                    <label class="topcoat-switch">  
+                        <input id="openAllFile" type="checkbox" class="topcoat-switch__input" name="openAllFile">
+                        <div class="topcoat-switch__toggle"></div>  
+                    </label> 
+                
+                    <p>Add Center Guide</p>
+                    <label class="topcoat-switch">  
+                        <input id="centerguide" type="checkbox" class="topcoat-switch__input" name="centerGuide">
+                        <div class="topcoat-switch__toggle"></div>  
+                    </label>
+                    
+                    
+                    <p>Remove all Guides </p>
+                    <label class="topcoat-switch">  
+                        <input id="deleteGuide" type="checkbox" class="topcoat-switch__input" name="deleteGuide">
+                        <div class="topcoat-switch__toggle"></div>  
+                    </label>
+                    
+                    <p>Save PSD jpeg</p>
+                    <label class="topcoat-switch">  
+                        <input id="saveFile" type="checkbox" class="topcoat-switch__input" name="saveFile">
+                        <div class="topcoat-switch__toggle"></div>  
+                    </label>
+                </form>    
+
+            <main>
+                    
+                <form name="crop" id="status"> 
+                    <h2>Spread Canvas Size</h2> 
+                    <div class="values"> 
+                        <label><p>up</p><input type="number" id="up" value="200" size="7" name="up" max="90000" min="-90000"></label>
+                        <label><p>bottom</p><input type="number" id="bottom" value="200" size="7" name="bottom" max="90000" min="-90000"></label>
+                        <label><p>left</p><input type="number" id="left" value="200" size="7" name="left" max="90000" min="-90000"></label>
+                        <label><p>right</p><input type="number" id="right" value="200" size="7" name="right" max="90000" min="-90000"></label>
+                    </div>    
+                </form>
+                
+                
+           
+              
+                
+                <form name="guide" id="guide"> 
+                   <h2>Addguide</h2> 
+                        
+                        <label class="topcoat-switch">  
+                            <input id="Guide_Switch" type="checkbox" class="topcoat-switch__input">
+                            <div class="topcoat-switch__toggle"></div>  
+                        </label>  
+                    <div class="values">     
+                        <label><p>horizont01</p>
+                        <input type="number" id="horizont01" class="guideform" value="0" size="7" name="h01" disabled max="90000" min="-90000">
+                        </label>
+                        <label><p>horizont02</p>
+                        <input type="number" id="horizont02" class="guideform" value="0" size="7" name="h02" disabled max="90000" min="-90000">
+                        </label>  
+                        <label><p>vertical01</p>
+                        <input type="number" id="vertical01" class="guideform" value="0" size="7" name="v01" disabled max="90000" min="-90000">
+                        </label>
+                        <label><p>vertical02</p>
+                        <input type="number" id="vertical02" class="guideform" value="0" size="7" name="v02" disabled max="90000" min="-90000">
+                        </label>   
+                    </div>       
+                </form>
+                
+                    
+                <form name="RGB" id="RGB" >
+                   <h2>AddBackGround-Color </h2>
+                    <label class="topcoat-switch">  
+                        <input id="Color_Switch" type="checkbox" class="topcoat-switch__input" >
+                        <div class="topcoat-switch__toggle"></div>  
+                    </label> 
+                    <div class="values">
+                        <input type="number" id="R" value="255" size="3" name="R" disabled max="255" min="0" class="color_value">
+                        <input type="number" id="G" value="255" size="3" name="G" disabled max="255" min="0" class="color_value">
+                        <input type="number" id="B" value="255" size="3" name="B" disabled max="255" min="0" class="color_value">   
+                    </div>     
+                </form>
+         </main>
+         <aside>
+             <button id="Done" class="topcoat-button--cta" >Done</button>  
+             <button id="Event_on" class="topcoat-button--cta">Event on</button>
+             <button id="Event_off" class="topcoat-button--cta" disabled=true >Event off</button>
+             <button id="compact" class="topcoat-button--cta">compact mode</button>
+         </aside>
+        <div id="presets">    
+             <form name="local_data">
+                 <select id="register" class="topcoat-select" name="register">
+                 </select>
+                 <input type="text" class="topcoat-text-input" value="" id="name_preset">
+             </form>
+             <button id="add_data" class="topcoat-button">register</button>
+             <button id="delete" class="topcoat-button">delete</button>
+        </div>
+    </div>
+    <div id="compact_mode">
+        <table id="spread">
+            <tr>
+                <th>top</th>
+                <th>bottom</th>
+                <th>right</th>
+                <th>left</th>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>10</td>
+                <td>10</td>
+                <td>10</td>
+            </tr>
+        </table>
+        <table id="color_list">
+            <tr>
+                <th>switch</th>
+                <th>R</th>
+                <th>G</th>
+                <th>B</th>
+            </tr>
+            <tr>
+                <td>ON</td>
+                <td>255</td>
+                <td>255</td>
+                <td>255</td>
+            </tr>
+        </table>
+        <table id="option_flag">
+            <tr>
+                <th>unit</th>
+                <th>all file</th>
+                <th>center guide</th>
+                <th>remove guide</th>
+                <th>save</th>
+            </tr>
+            <tr>
+                <td>ON</td>
+                <td>ON</td>
+                <td>ON</td>
+                <td>ON</td>
+                <td>ON</td>
+            </tr>
+        </table>
+        <table id="addition_guide">
+            <tr>
+                <th>switch</th>
+                <th>hori01</th>
+                <th>hori02</th>
+                <th>vert01</th>
+                <th>vert02</th>
+            </tr>
+            <tr>
+                <th>ON</th>
+                <th>100</th>
+                <th>100</th>
+                <th>100</th>
+                <th>100</th>
+            </tr>
+        </table>
+        <button id="back_normal" class="topcoat-button--cta">back</button>
+        <button id="compact_switch" class="topcoat-button--cta">Done</button>
+    </div>
+    <div id="JSON_data">
+        <table id="preset_list">
+            
+        </table>
+    </div>
+    
+    <!-- These are debugging shortcuts.  Class debuglink items only appear in debug mode 
+    <span class="debuglink" id="reload"></span>
+    <span class="debuglink" id="debug"></span>
+    <span class="debuglink" id="sources"></span> -->
+    
+    
+        
+</body>
+</html>
