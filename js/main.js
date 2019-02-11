@@ -50,6 +50,12 @@ window.onload = function(){
     const content = document.getElementById(`content`);
     const compact_mode = document.getElementById(`compact_mode`);
     
+    function set_event(flag){
+        content.dataset.event = flag;
+    }
+    
+    
+    console.log(typeof content.dataset.event);
     function read_json(){
         const file_content = fs.readFileSync(json_path,`utf8`);
         const result = JSON.parse(file_content);
@@ -244,7 +250,7 @@ window.onload = function(){
             console.log(event_button);
             csInterface.evalScript(`begin_crop(${JSON.stringify(event_button)})`);
         }
-    csInterface.addEventListener(`com.adobe.PhotoshopJSONCallback`+extensionId,PhotoshopCallbackUnique);
+    
 
     function dispatch_event(){
         event_on.disabled = true;
@@ -258,7 +264,9 @@ window.onload = function(){
             event.extensionId = csInterface.getExtensionID();
             csInterface.dispatchEvent(event);
             console.log(event);
-        }); 
+        });
+        csInterface.addEventListener(`com.adobe.PhotoshopJSONCallback`+extensionId,PhotoshopCallbackUnique);
+        set_event(true);
     }
     event_on.addEventListener(`click`,dispatch_event);
     /*============================================================================*/
@@ -268,6 +276,7 @@ window.onload = function(){
         event_on.disabled = false;
         event_off.disabled = true;
         csInterface.removeEventListener(`com.adobe.PhotoshopJSONCallback`+extensionId,PhotoshopCallbackUnique);
+        set_event(false);
     });
     
    
@@ -366,10 +375,11 @@ window.onload = function(){
     
     csInterface.addEventListener(`com.adobe.csxs.events.WindowVisibilityChanged`,(event)=>{//persistenceがonになっていないと作動しない
         if(!event.data){
+            set_event(String(event.data));
             event_on.disabled = false;
             event_off.disabled = true;
             csInterface.removeEventListener(`com.adobe.PhotoshopJSONCallback`+extensionId,PhotoshopCallbackUnique);
-        }else{
+        }else if(content.dataset.event===`true`){
             csInterface.addEventListener(`com.adobe.PhotoshopJSONCallback`+extensionId,PhotoshopCallbackUnique);
         }
     });
